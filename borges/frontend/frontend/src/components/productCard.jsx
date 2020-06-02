@@ -15,7 +15,7 @@ class ProductCard extends Component {
   render() {
     return (
       <div
-        className="lg:w-1/4 md:w-1/2 p-4 w-full product"
+        className="md:w-1/2 p-4 w-full product"
         onMouseEnter={this.handleMouseHover}
         onMouseLeave={this.handleMouseHover}
       >

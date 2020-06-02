@@ -12,3 +12,7 @@ class ProductModel(models.Model):
     category = models.ForeignKey(
         CategoryModel, on_delete=models.CASCADE, null=True)
     title = models.CharField(max_length=100)
+    slider = models.BooleanField()
+
+    def __str__(self):
+        return self.title

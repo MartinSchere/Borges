@@ -1,9 +1,13 @@
 import React, { Component } from "react";
 import { Switch, Route } from "react-router-dom";
-import Home from "./components/Pages/Home/Home";
-import Products from "./components/Pages/Products/Products";
+import Home from "./components/Pages/Inicio/Inicio";
+import Products from "./components/Pages/Productos/Productos";
 import Navbar from "./components/navbar";
 import Footer from "./components/footer";
+import LaEmpresa from "./components/Pages/La empresa/La_Empresa";
+import Contact from "./components/Pages/Contacto/contact";
+import Servicios from "./components/Pages/Servicios/Servicios";
+import Prensa from "./components/Pages/Prensa/Prensa";
 
 const Routes = () => {
   return (
@@ -12,6 +16,10 @@ const Routes = () => {
       <Switch>
         <Route exact path="/" component={Home} />
         <Route path="/products" component={Products} />
+        <Route path="/la-empresa" component={LaEmpresa} />
+        <Route path="/contacto" component={Contact} />
+        <Route path="/servicios" component={Servicios} />
+        <Route path="/prensa" component={Prensa} />
       </Switch>
       <Footer />
     </React.Fragment>

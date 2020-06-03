@@ -1,0 +1,27 @@
+{% load static %} {% block content %}
+<div class="side-menu">
+  <div>
+    <h3>
+      Sesión iniciada como {{user}}
+    </h3>
+    <h3 class="text-center underline">
+      <a href="{% url 'logout' %}"> Salir</a>
+    </h3>
+  </div>
+  <div class="image-holder">
+    <img src="{% static 'img/logo.svg' %}" width="150px" />
+  </div>
+  <div class="sub-menu">
+    <a href="/"><h1 class="title">Productos</h1></a>
+  </div>
+
+  <div class="sub-menu">
+    <h1 class="title">Categorías</h1>
+  </div>
+
+  <div class="sub-menu">
+    <h1 class="title">Prensa</h1>
+  </div>
+  <div class="space"></div>
+</div>
+{% endblock %}

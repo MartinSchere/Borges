@@ -1,0 +1,56 @@
+form {
+  background-color: #edf2f7;
+  padding: 1em 1em 2em 1em;
+  border-radius: 15px;
+  width: 75%;
+  text-align: initial;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+}
+input[type="text"] {
+  padding: 0.4em;
+  transition: 0.5s;
+  width: 100%;
+}
+textarea,
+select {
+  padding: 0.4em !important;
+  transition: 0.5s;
+  width: 100%;
+}
+.sumbit-btn {
+  line-height: normal;
+  margin: 0.5em;
+  transition: 0.5s;
+  padding: 0.5em !important;
+  background-color: #4a5568 !important;
+  border-radius: 10px;
+  color: white !important;
+  font-weight: 700 !important;
+  text-transform: uppercase;
+  font-size: 1.2rem !important;
+}
+.sumbit-btn:hover {
+  background-color: #676d75 !important;
+}
+.sumbit-btn.delete {
+  display: flex;
+  background-color: #d44545 !important;
+}
+.sumbit-btn.delete:hover {
+  background-color: #eb8b7f !important;
+}
+.control-group {
+  margin: 1em;
+}
+.input-field {
+  padding: 0.5em;
+}
+.button-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}

@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'frontend',
     'graphene_django',
     'corsheaders',
+    'crispy_forms',
     # /user apps
     'django.contrib.admin',
     'django.contrib.auth',

@@ -1,0 +1,54 @@
+{% load static %} {% load crispy_forms_tags %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'css/dashboard.css'%}" />
+    <link rel="stylesheet" href="{% static 'css/product_detail.css'%}" />
+    <link
+      href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+
+    <title>Editar producto</title>
+  </head>
+  <body>
+    <main>
+      {% include 'main/side_menu.html' %}
+      <div class="loader-wrapper" id="loader-wrapper">
+        <img src="{% static 'img/loader.gif' %}" width="250px" id="loader" />
+      </div>
+      <div class="content" id="content">
+        <div class="wrapper">
+          <form method="POST">
+            {% csrf_token %} {{form|crispy}}
+            <div class="button-wrapper">
+              <button type="submit" class="sumbit-btn">Guardar</button>
+              <a class="sumbit-btn delete" href="{{ object.get_delete_url }}">
+                <svg
+                  class="bi bi-trash mt-1 mr-1"
+                  width="1em"
+                  height="1em"
+                  viewBox="0 0 16 16"
+                  fill="white"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"
+                  />
+                  <path
+                    fill-rule="evenodd"
+                    d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4L4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"
+                  />
+                </svg>
+                ELIMINAR
+              </a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </main>
+  </body>
+  <script src="{% static 'js/loader.js' %}"></script>
+</html>

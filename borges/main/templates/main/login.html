@@ -26,8 +26,10 @@
     {% if messages %}
     <ul class="messages">
       {% for message in messages %}
-      <div
-        class="alert alert-danger alert-dismissible fade show text-center"
+      <div{% if message.tags %}
+        
+        class="alert alert-{{ message.tags }} alert-dismissible fade show text-center"
+        {% endif %}
         role="alert"
       >
         {{message}}

@@ -17,7 +17,9 @@ body {
   grid-gap: 7rem;
   padding: 0 2rem;
 }
-
+.alert-error {
+  background-color: rgb(253, 175, 175);
+}
 .img {
   display: flex;
   justify-content: center;

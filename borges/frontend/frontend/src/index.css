@@ -9,9 +9,13 @@ h1,
 h2,
 h3,
 h4,
-span {
+.borges {
   text-transform: uppercase;
   font-weight: 900;
+}
+span {
+  font-weight: 700;
+  text-transform: uppercase;
 }
 a,
 button {
@@ -33,4 +37,40 @@ button:focus {
 button:focus {
   outline: 2px #4f705d !important;
   background-color: #7ea78f;
+}
+.logo-link {
+  border: none !important;
+}
+.active {
+  border-bottom: 3px solid #4f705d;
+}
+nav a {
+  transition: none !important;
+}
+.float {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 40px;
+  right: 40px;
+  background-color: #25d366;
+  color: #fff;
+  border-radius: 50px;
+  text-align: center;
+  font-size: 30px;
+  box-shadow: 2px 2px 3px #999;
+  z-index: 100;
+}
+
+.my-float {
+  margin-top: 16px;
+}
+.contact.active {
+  border: none !important;
+}
+.dropdown-menu {
+  transition: all 2s;
+}
+.dropdown:hover .dropdown-menu {
+  display: block;
 }

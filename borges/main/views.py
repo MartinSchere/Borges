@@ -8,6 +8,7 @@ from django.contrib import messages
 @login_required
 def dashboard(request):
     ctx = {
+        'user': request.user,
         'products': ProductModel.objects.all(),
         'categories': CategoryModel.objects.all()
     }

@@ -1,18 +1,106 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'css/dashboard.css'%}" />
+    <link
+      href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+
     <title>Dashboard</title>
   </head>
   <body>
-    <h1>Productos</h1>
-    {% for p in products %}
-    <div>{{p}}</div>
-    {% endfor %}
-    <h1>Categorías</h1>
-    {% for c in categories %}
-    <div>{{c}}</div>
-    {% endfor %}
+    <main>
+      <div class="side-menu">
+        <div>
+          <h3>
+            Sesión iniciada como {{user}}
+          </h3>
+          <h3 class="text-center underline"><a href="#"> Salir</a></h3>
+        </div>
+        <div class="image-holder">
+          <img src="{% static 'img/logo.svg' %}" width="150px" />
+        </div>
+        <div class="sub-menu">
+          <h1 class="title">Productos</h1>
+        </div>
+
+        <div class="sub-menu">
+          <h1 class="title">Categorías</h1>
+        </div>
+
+        <div class="sub-menu">
+          <h1 class="title">Prensa</h1>
+        </div>
+        <div class="space"></div>
+      </div>
+      <div class="content">
+        <section class="text-gray-700 body-font">
+          <div class="container px-5 py-24 mx-auto">
+            {% if products %}
+            <h1 class="text-left mb-6">Todos los productos:</h1>
+            <div class="flex flex-wrap -m-4">
+              {% for p in products %}
+
+              <div
+                class="lg:w-1/4 md:w-1/2 p-4 w-full product-card"
+                id="p-card"
+                onmouseenter="toggleActive()"
+                onmouseleave="untoggleActive()"
+              >
+                <svg
+                  class="bi bi-brush text-right"
+                  id="edit-icon"
+                  width="2em"
+                  height="2em"
+                  viewBox="0 0 16 16"
+                  fill="red"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M15.213 1.018a.572.572 0 0 1 .756.05.57.57 0 0 1 .057.746C15.085 3.082 12.044 7.107 9.6 9.55c-.71.71-1.42 1.243-1.952 1.596-.508.339-1.167.234-1.599-.197-.416-.416-.53-1.047-.212-1.543.346-.542.887-1.273 1.642-1.977 2.521-2.35 6.476-5.44 7.734-6.411z"
+                  />
+                  <path
+                    d="M7 12a2 2 0 0 1-2 2c-1 0-2 0-3.5-.5s.5-1 1-1.5 1.395-2 2.5-2a2 2 0 0 1 2 2z"
+                  />
+                </svg>
+                <a class="block relative h-48 rounded overflow-hidden">
+                  <img
+                    alt="ecommerce"
+                    class="object-cover object-center w-full h-full block"
+                    src="https://dummyimage.com/420x260"
+                  />
+                </a>
+                <div class="mt-4">
+                  <h3
+                    class="text-gray-500 text-xs tracking-widest title-font mb-1"
+                  >
+                    {{p.category}}
+                  </h3>
+                  <h2 class="text-gray-900 title-font text-lg font-medium">
+                    {{p.title}}
+                  </h2>
+                </div>
+              </div>
+              {% endfor %} {% else %}
+              <h1>No hay productos todavía...</h1>
+              {% endif %}
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+    <script>
+      const productCard = document.getElementById("p-card");
+      function toggleActive() {
+        productCard.firstElementChild.classList.add("active");
+      }
+      function untoggleActive() {
+        productCard.firstElementChild.classList.remove("active");
+      }
+    </script>
   </body>
 </html>

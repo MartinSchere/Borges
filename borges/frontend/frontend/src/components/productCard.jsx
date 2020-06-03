@@ -19,12 +19,12 @@ class ProductCard extends Component {
         onMouseEnter={this.handleMouseHover}
         onMouseLeave={this.handleMouseHover}
       >
-        <a className="block relative h-48 rounded overflow-hidden p-image">
+        <a className="block relative h-48 rounded overflow-hidden p-image flex justify-center">
           {this.state.isHovering && <p className="image-helper">Ver más</p>}
           <img
             alt="ecommerce"
-            className="object-cover object-center w-full h-full block"
-            src="https://dummyimage.com/420x260"
+            className="object-cover object-center max-w-full max-h-full block"
+            src={"http://127.0.0.1:8000/media/" + this.props.previewImage}
           />
         </a>
         <div className="mt-4">

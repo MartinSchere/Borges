@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import "./carousel.css";
 const slides = [
   {
@@ -15,7 +15,6 @@ console.log(slides);
 
 const Slider = () => {
   const [active, setActive] = React.useState(0);
-  const [autoplay, setAutoplay] = React.useState(0);
   const max = slides.length;
 
   const intervalBetweenSlides = () =>

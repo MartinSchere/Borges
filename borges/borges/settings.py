@@ -141,3 +141,6 @@ CORS_ORIGIN_WHITELIST = [
     # your React App domain
 ]
 LOGIN_URL = 'http://127.0.0.1:8000/login/'
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')

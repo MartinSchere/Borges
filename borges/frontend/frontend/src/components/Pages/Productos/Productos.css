@@ -3,6 +3,8 @@
   text-align: center;
 }
 .image-helper {
+  filter: brightness(100%) !important;
+  z-index: 33;
   transition: 1s ease;
   color: white;
   font-weight: 700;
@@ -19,7 +21,7 @@
   transition: 0.7s;
 }
 .product:hover {
-  filter: brightness(60%);
+  filter: brightness(80%);
 }
 .separator {
   margin-left: 1.2em;

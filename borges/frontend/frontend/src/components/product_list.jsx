@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import ProductCard from "./productCard";
 import { useQuery } from "react-apollo";
 import { gql } from "apollo-boost";
@@ -8,6 +8,7 @@ const QUERY_PRODUCTS = gql`
     products {
       id
       title
+      previewImage
       category {
         title
       }
@@ -48,8 +49,13 @@ export function ProductList() {
       <section className="text-gray-700 body-font">
         <div className="container px-5 py-24 mx-auto">
           <div className="flex flex-wrap -m-4">
-            {data.products.map(({ id, title, category }) => (
-              <ProductCard key={id} title={title} category={category.title} />
+            {data.products.map(({ id, title, category, previewImage }) => (
+              <ProductCard
+                key={id}
+                title={title}
+                category={category.title}
+                previewImage={previewImage}
+              />
             ))}
           </div>
         </div>

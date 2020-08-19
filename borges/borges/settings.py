@@ -20,7 +20,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '1b#l^_8f3-c-pd@u)j6sl6%k$hukdli2-9ny246ogc3*s_7x!0'
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -139,11 +139,8 @@ GRAPHENE = {
     'SCHEMA': 'main.schema.schema'
 }
 CORS_ORIGIN_WHITELIST = [
-    "http://localhost:3000",
-    "http://127.0.0.1:3000"
-    # your React App domain
 ]
-LOGIN_URL = 'http://127.0.0.1:8000/login/'
+#LOGIN_URL = 'http://127.0.0.1:8000/login/'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')

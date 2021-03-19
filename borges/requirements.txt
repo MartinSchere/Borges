@@ -29,7 +29,7 @@ django-prices-vatlayer==1.0.2
 django-rest-knox==4.1.0
 django-storages==1.9.1
 django-versatileimagefield==2.0
-djangorestframework==3.11.0
+djangorestframework==3.11.2
 djangorestframework-filters==0.11.1
 enmerkar==0.7.1
 filelock==3.0.12
